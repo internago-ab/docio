@@ -1,5 +1,6 @@
 import React,{ useEffect } from "react"
 import "./list-block.scss"
+import arrow from '../images/icons/arrow-black.svg'
 
 import Aos from "aos"
 import "aos/dist/aos.css"
@@ -22,6 +23,7 @@ function ListBlock(props) {
                 <ul className="">
                 {content.map((item, index) => (
                     <li key={index} className="">
+                        <img alt="arrow icon" src={arrow}/>
                         <p data-aos="fade-zoom-in">{item.text}</p>
                     </li>
                 ))}
