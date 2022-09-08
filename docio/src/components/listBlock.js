@@ -1,7 +1,14 @@
-import React from "react"
+import React,{ useEffect } from "react"
 import "./list-block.scss"
 
-function listBlock(props) {
+import Aos from "aos"
+import "aos/dist/aos.css"
+
+function ListBlock(props) {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 })
+      }, [])
 
     const content = props.content
 
@@ -9,13 +16,13 @@ function listBlock(props) {
     <section className="section list-image">
         <div className="list-block">
             <div className="list-block-content">
-            <h3>{props.intro}</h3>
-            <h2>{props.header}</h2>
+            <h3 data-aos="fade-zoom-in">{props.intro}</h3>
+            <h2 data-aos="fade-zoom-in">{props.header}</h2>
             <div>
                 <ul className="">
                 {content.map((item, index) => (
                     <li key={index} className="">
-                        <p>{item.text}</p>
+                        <p data-aos="fade-zoom-in">{item.text}</p>
                     </li>
                 ))}
                 </ul>
@@ -23,10 +30,10 @@ function listBlock(props) {
             </div>
         </div>
         <div className="list-block-img">
-            <img src={props.image}/>
+            <img src={props.image} data-aos="fade-in-right"/>
         </div>
     </section>
   )
 }
 
-export default listBlock
+export default ListBlock

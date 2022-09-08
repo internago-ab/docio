@@ -116,7 +116,7 @@ const Layout = ({ children }) => {
 
             <li>
               <a
-                href="https://payroll.internago.com/"
+                href="mailto:info@internago.com"
                 className={`${menuDisplayed ? "li-active" : ""}`}
               >
                 Contact
@@ -141,7 +141,7 @@ const Layout = ({ children }) => {
             <Link to="/about">Prices</Link>
           </li>
           <li className="cta-btn" id="inverted">
-            <a href="https://payroll.internago.com/">Contact us</a>
+            <a href="mailto:info@internago.com">Contact us</a>
           </li>
           <li className="cta-btn">
             <a href="https://payroll.internago.com/">Go to portal</a>
@@ -152,7 +152,7 @@ const Layout = ({ children }) => {
       <motion.main
         initial={{
           opacity: 0,
-          x: -200,
+          x: 0,
         }}
         animate={{
           opacity: 1,
@@ -166,7 +166,7 @@ const Layout = ({ children }) => {
           type: "spring",
           mass: 0.35,
           stiffness: 75,
-          duration: 0.3,
+          duration: 0.25,
         }}
       >
         <main>{children}</main>

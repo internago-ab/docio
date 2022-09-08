@@ -2,6 +2,7 @@ import React from "react"
 
 //components
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import Hero from "../components/hero"
 import TextImage from "../components/textimage"
 import IconGrid from "../components/iconGrid"
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
   <Layout>
+    <Seo title="Home" />
     <Hero
       alt="man using laptop"
       intro="For all your payroll needs"

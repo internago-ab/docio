@@ -73,6 +73,13 @@
         padding: var(--spacing-xs);
     }
 
+    button{
+        background: transparent;
+    border: none;
+    text-align: inherit;
+    font-family: var(--font);
+    }
+
     h3{
         color: var(--dark-grey);
     }

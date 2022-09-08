@@ -2,6 +2,7 @@ import React from "react"
 
 //components
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 import Hero from "../components/hero"
 import PayrollBlock from "../components/payrollBlock"
 
@@ -21,6 +22,7 @@ import payrollWorkflow from "../images/payroll/payroll-workflow.jpg"
 export default function Home() {
   return (
   <Layout>
+    <Seo title="Payroll" />
     <Hero
       size="small"
       intro="For all your payroll needs"

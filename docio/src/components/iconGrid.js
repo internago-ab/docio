@@ -5,7 +5,14 @@ import arrow from '../images/icons/arrow-black.svg'
 
 import "./icongrid.scss"
 
+import Aos from "aos"
+import "aos/dist/aos.css"
+
 function Icongrid(props) {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
 
   const postsToDisplay = 3
   const [limit, setLimit] = useState(postsToDisplay);
@@ -46,11 +53,11 @@ function Icongrid(props) {
           
         {width > 600 && (content
           .map((item, index) => (
-            <li key={index} className="icon-item">
-              <AnchorLink to={item.link} className='anchorlink'>
+            <li key={index} className="icon-item" data-aos="fade-zoom-in">
+              <button onClick={() => window.location.href = item.link } className='ink'>
                 <h3>{item.header}</h3>
                 <p>{item.text}</p>
-            </AnchorLink>
+              </button>
             </li>
         )))}
             {width < 599 && (
@@ -58,9 +65,11 @@ function Icongrid(props) {
         
               .slice(0, limit)
               .map((item, index) => (
-                <li key={index} className="icon-item">
+                <li key={index} className="icon-item" data-aos="fade-zoom-in">
+                  <button onClick={() => window.location.href = item.link } className='ink'>
                     <h3>{item.header}</h3>
                     <p>{item.text}</p>
+                  </button>
                 </li>)))}
                 <div className="cta-btn show-more">
                   <a className="show-more" onClick={showMoreDocuments}> {limit === 6 ? "Show less" : "Show more"}</a>

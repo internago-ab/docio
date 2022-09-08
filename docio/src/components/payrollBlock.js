@@ -1,13 +1,22 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./payroll-block.scss"
 
-function payrollBlock(props) {
+import Aos from "aos"
+import "aos/dist/aos.css"
+
+function PayrollBlock(props) {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
+
   return (
     <div className={`section ${props.bg}`}>
-    <div className={`bg-text-image ${props.reverse}`}>
+    <div className={`bg-text-image ${props.reverse}`} id={props.id} >
        <div className={`text-container ${props.bgText}`}>
-            <h2 id={props.id}>{props.title}</h2>
+            <h2 data-aos="fade-zoom-in">{props.title}</h2>
             <p
+            data-aos="fade-zoom-in"
             className="paragraph"
             dangerouslySetInnerHTML={{ __html: props.text }}
           ></p>
@@ -23,4 +32,4 @@ function payrollBlock(props) {
   )
 }
 
-export default payrollBlock
+export default PayrollBlock

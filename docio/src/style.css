@@ -36,6 +36,7 @@
   --fontSize-h2: 2.3rem;
   --fontSize-h2-responsive: 1.85rem;
   --fontSize-h3: 1.5rem;
+  --fontSize-p-l: 1.4rem;
   --fontSize-p: 1.2rem;
   --fontSize-p-m: 1.1rem;
   --fontSize-p-s: 1rem;
@@ -123,10 +124,10 @@ h3 {
   font-size: var(--fontSize-h3);
 }
 
-p,
-a {
+p, a{
   font-size: var(--fontSize-p);
 }
+
 
 a,
 button {
