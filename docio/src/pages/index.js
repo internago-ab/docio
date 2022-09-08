@@ -4,7 +4,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Hero from "../components/hero"
-import TextImage from "../components/textimage"
+import TextImage from "../components/textImage"
 import IconGrid from "../components/iconGrid"
 import ListBlock from "../components/listBlock"
 
