@@ -10,13 +10,22 @@ import "aos/dist/aos.css"
 
 function Icongrid(props) {
 
+  if (typeof window !== 'undefined') {
+    //here `window` is available
+  
+
   useEffect(() => {
     Aos.init({ duration: 1000 })
   }, [])
 
-  const postsToDisplay = 3
-  const [limit, setLimit] = useState(postsToDisplay);
 
+  if (window !== undefined) {
+    
+
+
+  }
+
+  
   const showMoreDocuments = () => {
     //setLimit(limit + 3) 
     setLimit(limit ? content.length :3)
@@ -26,8 +35,11 @@ function Icongrid(props) {
       setLimit(limit ? 3 : 3)
     }
   };
+  
 
   const content = props.content
+
+  
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -39,7 +51,6 @@ function Icongrid(props) {
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
 
-  console.log(window.innerHeight)
   return (
     <section className="icon-wrapper">
         <h2 className="icon-header">{props.header}</h2>
@@ -78,6 +89,7 @@ function Icongrid(props) {
         
     </section>
   )
+}
 }
 
 export default Icongrid
