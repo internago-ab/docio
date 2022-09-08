@@ -10,8 +10,6 @@ import "aos/dist/aos.css"
 
 function Icongrid(props) {
 
-
-
   if (typeof window !== 'undefined') {
     
     useEffect(() => {
