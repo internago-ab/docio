@@ -10,46 +10,38 @@ import "aos/dist/aos.css"
 
 function Icongrid(props) {
 
+
+
   if (typeof window !== 'undefined') {
-    //here `window` is available
-  
-
-  useEffect(() => {
-    Aos.init({ duration: 1000 })
-  }, [])
-
-
-  if (window !== undefined) {
     
+    useEffect(() => {
+      Aos.init({ duration: 1000 })
+    }, [])
 
-
-  }
-
+    const postsToDisplay = 3
+    const [limit, setLimit] = useState(postsToDisplay);
   
-  const showMoreDocuments = () => {
-    //setLimit(limit + 3) 
-    setLimit(limit ? content.length :3)
-    console.log(limit)
-    //const numberOfItems = showMore ? projects.length : 3;
-    if (limit === 6){
-      setLimit(limit ? 3 : 3)
-    }
-  };
+    const showMoreDocuments = () => {
+      //setLimit(limit + 3) 
+      setLimit(limit ? content.length :3)
+      console.log(limit)
+      //const numberOfItems = showMore ? projects.length : 3;
+      if (limit === 6){
+        setLimit(limit ? 3 : 3)
+      }
+    };
   
-
-  const content = props.content
-
+    const content = props.content
   
-
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [width]);
+    const [width, setWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      function handleResize() {
+        setWidth(window.innerWidth);
+      }
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, [width]);
 
   return (
     <section className="icon-wrapper">
