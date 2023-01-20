@@ -86,7 +86,7 @@ const Layout = ({ children }) => {
             style={{
               top: visible ? "69px" : "-69px",
               overflow: menuDisplayed ? "unset" : "hidden",
-              height: menuDisplayed ? 200 : 0,
+              height: menuDisplayed ? 150 : 0,
             }}
           >
             <li>
@@ -95,22 +95,6 @@ const Layout = ({ children }) => {
                 className={`${menuDisplayed ? "li-active" : "li-not-active"}`}
               >
                 Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/payroll"
-                className={`${menuDisplayed ? "li-active" : ""}`}
-              >
-                Payroll portal
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className={`${menuDisplayed ? "li-active" : ""}`}
-              >
-                Prices
               </Link>
             </li>
 
@@ -134,12 +118,6 @@ const Layout = ({ children }) => {
         </div>
 
         <ul className="desktop-menu">
-          <li>
-            <Link to="/payroll">Payroll Portal</Link>
-          </li>
-          <li>
-            <Link to="/about">Prices</Link>
-          </li>
           <li className="cta-btn" id="inverted">
             <a href="mailto:info@internago.com">Contact us</a>
           </li>
@@ -173,37 +151,48 @@ const Layout = ({ children }) => {
       </motion.main>
 
       <footer>
-      <img src={docioLogoWhite} alt="docio logo in white" className="docio-logo-white"/>
+        <img
+          src={docioLogoWhite}
+          alt="docio logo in white"
+          className="docio-logo-white"
+        />
         <div className="footer-flex">
           <div>
             <h3>About us</h3>
-            <p>Let's be honest, international payroll can be challenging, but it has to be done. We have the perfect tool for managing international payroll and HR related tasks for your international employees. We let you store and manage all important employee and payroll data in one place. Your job is simply to check and approve in the portal.</p>
+            <p>
+              Let's be honest, international payroll can be challenging, but it
+              has to be done. We have the perfect tool for managing
+              international payroll and HR related tasks for your international
+              employees. We let you store and manage all important employee and
+              payroll data in one place. Your job is simply to check and approve
+              in the portal.
+            </p>
           </div>
 
           <div className="contact-find-us">
             <h3>Find us</h3>
             <div className="contact-locations">
-            <p>
-              Internago Sweden
-              <br />
-              Tegelbacken 4A
-              <br />
-              111 52 Stockholm, Sweden
-            </p>
-            <p>
-              Internago France
-              <br />
-              39, Av. Pierre 1er de Serbie
-              <br />
-              75008 Paris, France
-            </p>
-            <p>
-              Internago Italy
-              <br />
-              Corso Vercelli, 57
-              <br />
-              20144 Milano, Italy
-            </p>
+              <p>
+                Internago Sweden
+                <br />
+                Tegelbacken 4A
+                <br />
+                111 52 Stockholm, Sweden
+              </p>
+              <p>
+                Internago France
+                <br />
+                39, Av. Pierre 1er de Serbie
+                <br />
+                75008 Paris, France
+              </p>
+              <p>
+                Internago Italy
+                <br />
+                Corso Vercelli, 57
+                <br />
+                20144 Milano, Italy
+              </p>
             </div>
           </div>
 
@@ -211,9 +200,13 @@ const Layout = ({ children }) => {
             <h3>Contact us</h3>
             <a href="mailto:support@internago.com">info@internago.com</a>
             <div className="socials">
-              <a href={`https://www.linkedin.com/company/${social?.linkedin || ``}`}>
-                 <img src={linkedin} alt="linkedin"></img>
-                  linkedin/internago
+              <a
+                href={`https://www.linkedin.com/company/${
+                  social?.linkedin || ``
+                }`}
+              >
+                <img src={linkedin} alt="linkedin"></img>
+                linkedin/internago
               </a>
               <a href={`https://twitter.com/${social?.twitter || ``}`}>
                 <img src={twitter} alt="linkedin"></img>
@@ -228,8 +221,9 @@ const Layout = ({ children }) => {
             Data and privacy policy
           </a>
           <p>
-          Copyright © 2017-<span>{new Date().getFullYear()}</span> All rights
-          reserved to Internago AB.</p>
+            Copyright © 2017-<span>{new Date().getFullYear()}</span> All rights
+            reserved to Internago AB.
+          </p>
         </div>
       </footer>
     </div>
