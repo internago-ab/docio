@@ -10,8 +10,8 @@ function Hero(props) {
         style={{ backgroundImage: `url(${props.bg})` }}>
             <div className="medium hero-content">
                 <p>{props.intro}</p>
-                <h1 className="heading">
-                    {props.title}
+                <h1 className="heading" dangerouslySetInnerHTML={{ __html: props.title }}>
+                    
                 </h1>
                 <p className="paragraph">
                     {props.text}

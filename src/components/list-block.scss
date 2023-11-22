@@ -31,32 +31,21 @@
 
       li {
         list-style: none;
-        display: flex;
-        align-items: center;
-
-        img{
-          display: inline-block;
-          height: 30px;
-          width: 33px;
-        }
-
-        p{
-          margin-left: 10px;
-        }
+        margin-left: 40px;
       }
       
       ul li:before {
-        // content: '';
-        // position: absolute;
-        // margin-top: 8px;
-        // display: inline-block;
-        // height: 40px;
-        // width: 33px;
-        // -webkit-transform: translateX(-40px);
-        // -ms-transform: translateX(-40px);
-        // transform: translateX(-40px);
-        // background-image: url('../images/icons/arrow-black.svg');
-        // background-repeat: no-repeat
+        content: '';
+        position: absolute;
+        margin-top: 8px;
+        display: inline-block;
+        height: 40px;
+        width: 33px;
+        -webkit-transform: translateX(-40px);
+        -ms-transform: translateX(-40px);
+        transform: translateX(-40px);
+        background-image: url('../images/icons/arrow-black.svg');
+        background-repeat: no-repeat
       }
     }
   

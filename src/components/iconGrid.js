@@ -1,67 +1,48 @@
-import React,{ useEffect, useState, useRef } from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import React,{ useEffect, useState } from "react"
 
 import arrow from '../images/icons/arrow-black.svg'
 
 import "./icongrid.scss"
 
-import Aos from "aos"
-import "aos/dist/aos.css"
 
 function Icongrid(props) {
+  const [limit, setLimit] = useState( 3 )
+  const [width, setWidth] = useState(window.innerWidth);
 
+console.log(props, 'proos')
+const content = props.content
 
-  const listRef = useRef(null)
-  const [width, setWidth] = useState()
-
-  const getListSize = () => {
-    const newWidth = listRef.current.clientWidth
-    setWidth(newWidth)
-  }
+  const showMoreDocuments = () => {
+    //setLimit(limit + 3) 
+    setLimit(limit ? content.length :3)
+    console.log(limit)
+    //const numberOfItems = showMore ? projects.length : 3;
+    if (limit === 6){
+      setLimit(limit ? 3 : 3)
+    }
+  };
 
   useEffect(() => {
-    getListSize()
-  }, [])
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
+  
 
-  useEffect(() => {
-    window.addEventListener("resize", getListSize)
-  }, [])
-  //if (typeof window !== 'undefined') {
-    
-    useEffect(() => {
-      Aos.init({ duration: 1000 })
-    }, [])
+  if (typeof window !== 'undefined') {
+    //here `window` is available  
 
-    const postsToDisplay = 3
-    const [limit, setLimit] = useState(postsToDisplay);
+
+
   
-    const showMoreDocuments = () => {
-      //setLimit(limit + 3) 
-      setLimit(limit ? content.length :3)
-      console.log(limit)
-      //const numberOfItems = showMore ? projects.length : 3;
-      if (limit === 6){
-        setLimit(limit ? 3 : 3)
-      }
-    };
-  
-    const content = props.content
-  
-   // const [width, setWidth] = useState(window.innerWidth);
-  
-    // useEffect(() => {
-    //   function handleResize() {
-    //     setWidth(window.innerWidth);
-    //   }
-    //   window.addEventListener("resize", handleResize);
-    //   return () => window.removeEventListener("resize", handleResize);
-    // }, [width]);
 
 
 
 
   return (
-    <section className="icon-wrapper" ref={listRef}>
+    <section className="icon-wrapper">
         <h2 className="icon-header">{props.header}</h2>
         <p className="icon-text" dangerouslySetInnerHTML={{ __html: props.text }}></p>
         <div className="icon-btn">
@@ -98,7 +79,7 @@ function Icongrid(props) {
         
     </section>
   )
-
+}
 }
 
 export default Icongrid

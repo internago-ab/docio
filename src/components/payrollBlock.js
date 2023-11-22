@@ -1,25 +1,23 @@
-import React, { useEffect } from "react"
+import React, {  } from "react"
+import arrow from '../images/icons/arrow-black.svg'
+
 import "./payroll-block.scss"
 
-import Aos from "aos"
-import "aos/dist/aos.css"
-
 function PayrollBlock(props) {
-
-  useEffect(() => {
-    Aos.init({ duration: 1000 })
-  }, [])
 
   return (
     <div className={`section ${props.bg}`}>
     <div className={`bg-text-image ${props.reverse}`} id={props.id} >
        <div className={`text-container ${props.bgText}`}>
-            <h2 data-aos="fade-zoom-in">{props.title}</h2>
+            <h2 >{props.title}</h2>
             <p
-            data-aos="fade-zoom-in"
+            
             className="paragraph"
             dangerouslySetInnerHTML={{ __html: props.text }}
           ></p>
+           <div className='link-arrow-black' >
+            {props.button && <a href={props.link}>{props.button} <img alt="arrow icon" src={arrow}/></a>}
+          </div>
         </div>
        <div className="image-container">
             <img 

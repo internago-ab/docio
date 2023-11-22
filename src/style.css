@@ -30,9 +30,9 @@
 
   --lineHeight-large: 2;
   --lineHeight: 1.6;
-  --fontSize-root: 16px;
-  --fontSize-h1: 4rem;
-  --fontSize-h1-responsive: 2.9rem;
+  --fontSize-root: 19px;
+  --fontSize-h1: 3rem;
+  --fontSize-h1-responsive: 2.5rem;
   --fontSize-h2: 2.3rem;
   --fontSize-h2-responsive: 1.85rem;
   --fontSize-h3: 1.5rem;
@@ -47,10 +47,10 @@
   --light-white: rgba(255, 255, 255, 0.85);
   --dark-grey: #5c5c5c;
   --light-grey: #e0e0e0;
-  --green: #93B09A;
-  --lighter-grey: rgba(208, 208, 208, .2);
-  --lighter-green: rgba(147, 176, 154, .35);
-  --lightest-green: rgba(147, 176, 154, .2)
+  --green: #93b09a;
+  --lighter-grey: rgba(208, 208, 208, 0.2);
+  --lighter-green: rgba(147, 176, 154, 0.35);
+  --lightest-green: rgba(147, 176, 154, 0.25);
 }
 
 html {
@@ -124,10 +124,17 @@ h3 {
   font-size: var(--fontSize-h3);
 }
 
-p, a{
+a {
   font-size: var(--fontSize-p);
 }
 
+strong {
+  font-size: var(--fontSize-p-m);
+}
+
+p {
+  font-size: var(--fontSize-p-s);
+}
 
 a,
 button {
@@ -153,7 +160,7 @@ button {
   overflow: hidden;
 }
 
-#inverted{
+#inverted {
   border: 2px solid var(--green);
   background-color: var(--white);
   color: var(--green);
@@ -169,11 +176,11 @@ button {
   color: var(--white);
 }
 
-#inverted a{
+#inverted a {
   color: var(--green);
 }
 
-.cta-btn a::before{
+.cta-btn a::before {
   display: none;
 }
 
@@ -205,7 +212,7 @@ button {
   color: var(--green);
 }
 
-#inverted:hover::after{
+#inverted:hover::after {
   background: var(--green);
   color: var(--white);
 }
@@ -215,7 +222,7 @@ button {
   color: var(--green);
 }
 
-#inverted:hover{
+#inverted:hover {
   color: var(--white);
 }
 
@@ -224,11 +231,11 @@ button {
   color: var(--green);
 }
 
-#inverted a:hover{
+#inverted a:hover {
   color: var(--white);
 }
 
-.show-more{
+.show-more {
   display: none;
 }
 
@@ -236,11 +243,11 @@ main {
   margin-top: 88px;
 }
 
-main> :first-child {
+main > :first-child {
   margin-top: 0;
 }
 
-main>section {
+main > section {
   margin-top: var(--spacing-s);
 }
 
@@ -248,18 +255,24 @@ section.error-page {
   padding: var(--spacing-l) var(--spacing-xl);
 }
 
-section.error-page>* {
+section.error-page > * {
   margin-bottom: var(--spacing-xs);
 }
 
-.section>div:first-of-type {
+.section > div:first-of-type {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .section-top {
   margin-top: var(--spacing-m);
+}
+
+@media screen and (max-width: 1800px) {
+  :root {
+    --fontSize-root: 17px;
+  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -269,7 +282,7 @@ section.error-page>* {
 }
 
 @media screen and (max-width: 1440px) {
-  .section>div:first-of-type {
+  .section > div:first-of-type {
     width: 100%;
     max-width: 1150px;
     margin: 0 auto;
@@ -277,29 +290,30 @@ section.error-page>* {
 }
 
 @media screen and (max-width: 1200px) {
-  .section>div:first-of-type {
+  .section > div:first-of-type {
     width: 85%;
   }
 }
 
-
 @media screen and (max-width: 1780px) {
-
   main {
     margin-top: 70px;
   }
 
-  p, a {
-  font-size: var(--fontSize-p-m);
+  p {
+    font-size: var(--fontSize-p-s);
   }
 
-  h3{
-    font-size: var(--fontSize-p); 
+  a {
+    font-size: var(--fontSize-p-m);
+  }
+
+  h3 {
+    font-size: var(--fontSize-p);
   }
 }
 
 @media screen and (max-width: 768px) {
-
   p,
   a,
   .menu-link {
@@ -324,19 +338,19 @@ section.error-page>* {
     padding: var(--spacing-s);
   }
 
-  main>section {
+  main > section {
     padding-top: 0;
   }
 
   h1 {
     font-size: var(--fontSize-h1-responsive);
   }
-  
-  h2{
+
+  h2 {
     font-size: var(--fontSize-h2-responsive);
   }
 
-  .show-more{
+  .show-more {
     display: block;
   }
 }
