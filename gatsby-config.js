@@ -15,6 +15,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pricing`,
+        name: `pricing`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         //offset: 1000,
