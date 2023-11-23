@@ -12,6 +12,8 @@
   "component---src-pages-index-jshead.js": "component---src-pages-index-jshead.js",
   "component---src-pages-payroll-js.js": "component---src-pages-payroll-js.js",
   "component---src-pages-payroll-jshead.js": "component---src-pages-payroll-jshead.js",
+  "component---src-pages-prices-js.js": "component---src-pages-prices-js.js",
+  "component---src-pages-prices-jshead.js": "component---src-pages-prices-jshead.js",
   "framework.js": "framework.js",
   "index.html": "index.html",
   "netlify-cms-app.js": "netlify-cms-app.js",
